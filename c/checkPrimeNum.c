@@ -14,7 +14,7 @@ int main()
             break;
         }
     }
-    if (i == userInput){
+    if (i == userInput){ //If true, the break didn't work
         printf("%d is a prime number.", userInput);
     }
     
