@@ -28,7 +28,7 @@ int main()
     for(check = min; check >= min && check <= max; check++) {
         tmp = check;
         result = 0;
-        while(tmp) {
+        while(tmp) { //拆分乘方计算
             result += pow(tmp % 10, num);
             tmp /= 10;
         }
