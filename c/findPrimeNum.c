@@ -18,8 +18,8 @@ int main()
                 break;
             }
         }
-        if (i == num)
-        { // If true, the break didn't work.
+        if (i == num)// If true, the break didn't work.
+        {
             printf("%d\t", num);
         }
     }
