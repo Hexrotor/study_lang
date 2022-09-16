@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 此脚本用于检测CUIT选课页面是否开放选课，原理是检测访问页面返回的数据大小与最初访问返回的数据大小是否相等。
-echo 此脚本并没有测试过可用性。按Ctrl+C可以结束程序。
+echo 此脚本仅适用于Linux Shell且并没有实际测试过可用性。按Ctrl+C可以结束程序。
 echo 访问选课页面需要设置Cookies，现在请按提示开始设置。
 echo 请先登录教务处，然后使用浏览器查看页面中的Cookies
 read -p "请输入GSESSIONID/JSESSIONID的值：" SESSIONID
@@ -10,6 +10,7 @@ read -r -p "是否要将当前输入值永久保存在脚本中？[Y/n] " save
 case $save in
 [yY][eE][sS]|[yY])
 #替换字符串
+#Linux路径，不适用于Windows
 thisPath=$(pwd)/$0
 sed -i "4,24d" ${thisPath}
 sed -i "s/\${SESSIONID}/${SESSIONID}/g ; s/\${semesterid}/${semesterid}/g" ${thisPath}
