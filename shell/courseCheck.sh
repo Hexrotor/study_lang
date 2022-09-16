@@ -26,7 +26,7 @@ initial=$(curl http://jwgl.cuit.edu.cn/eams/stdElectCourse.action --cookie "GSES
 while true
 do	
 	response=$(curl http://jwgl.cuit.edu.cn/eams/stdElectCourse.action --cookie "GSESSIONID=${SESSIONID};JSESSIONID=${SESSIONID};semester.id=${semesterid}" -o /dev/null -s -w %{size_download})
-	echo $(date '+%Y年%m月%d日 %T') 最初数据大小是${initial}，当前数据大小是$response
+	echo $(date '+%Y年%m月%d日 %T') 最初数据大小是${initial}，当前数据大小是${response}
 	if [ ${response} != ${initial} ]; then 
 		echo "传输数据有变化！请留意选课"
 	fi
