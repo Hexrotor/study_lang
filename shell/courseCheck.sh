@@ -12,7 +12,7 @@ case $save in
 #替换字符串
 #Linux路径，不适用于Windows
 thisPath=$(pwd)/$0
-sed -i "4,24d" ${thisPath}
+sed -i "4,25d" ${thisPath}
 sed -i "s/\${SESSIONID}/${SESSIONID}/g ; s/\${semesterid}/${semesterid}/g" ${thisPath}
 ;;
 [nN][oO]|[nN])
