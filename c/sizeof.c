@@ -1,3 +1,17 @@
+/*
+The number one's size is 4
+The size of int is 4
+The size of short int is 2
+The size of long int is 4
+The size of long long int is 8
+The size of word C is 1
+The size of char is 1
+The size of data 3.14 is 4
+The size of float is 4
+The size of double is 8
+The size of long double is 16
+The sizeof _Bool is 1
+*/
 #include <stdio.h>
 
 int main()
