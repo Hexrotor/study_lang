@@ -13,7 +13,7 @@ int main()
 	int dct=0;//方向 向右为0，向下为1，向左为2，向上为3
 	
 	int i,j;
-	
+	/*	
 	int rightEdge=n-1, downEdge=n-1, leftEdge=0, upEdge=0;
 
 	do{
@@ -51,6 +51,7 @@ int main()
 				break;
 		}
 	}while(number<=endNumber);
+	*/
 	for(i=0;i<n;i++){
 		for(j=0;j<n;j++){
 			printf("%d",arr[i][j]);
