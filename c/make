@@ -1,3 +1,0 @@
-#! /bin/sh
-echo "Usage: ${0} filename"
-gcc $* -o ${1%%.*}
