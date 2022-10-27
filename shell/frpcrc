@@ -1,0 +1,20 @@
+#!/bin/bash
+# Setup frpc forward
+winip=$(cat /etc/resolv.conf|grep -o 172.*.*.1)
+mkdir ~/.config
+touch ~/.config/frpc.ini
+echo "[common]">~/.config/frpc.ini
+echo "server_addr = ${winip}">>~/.config/frpc.ini
+echo "server_port = 7000">>~/.config/frpc.ini
+echo "token = 114514">>~/.config/frpc.ini
+echo "[IDA_DEBUG]">>~/.config/frpc.ini
+echo "type = tcp">>~/.config/frpc.ini
+echo "local_ip = 127.0.0.1">>~/.config/frpc.ini
+echo "local_port = 23946">>~/.config/frpc.ini
+echo "remote_port = 23946">>~/.config/frpc.ini
+run=$(ps -A|grep -o frpc)
+if [ "${run}" == "" ]; then
+        nohup ~/frpc -c ~/.config/frpc.ini >/dev/null 2>&1 &
+else
+        echo "frpc is running"
+fi
